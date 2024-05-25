@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - MARIADB_ROOT_PASSWORD=HYBUM8q1
+      - MARIADB_DATABASE=laravel
+      - MARIADB_USER=bn_laravel
+      - MARIADB_PASSWORD=Q33j8kNr
+    volumes:
+      - mariadb_data:/bitnami/mariadb
+
+  app:
+    image: 'bitnami/laravel:latest'
+    environment:
+      - DB_HOST=mariadb
+      - DB_DATABASE=laravel
+      - DB_USERNAME=bn_laravel
+      - DB_PASSWORD=Q33j8kNr
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app
+      - app_data:/bitnami
+
+volumes:
+  mariadb_data:
+    driver: local
+  app_data:
+    driver: local
