@@ -12,7 +12,7 @@ Para executar a API localmente, siga estas etapas:
 
 1. Certifique-se de ter o Docker instalado em sua máquina.
 2. Clone este repositório:
-    git clone https://github.com/seu-usuario/api-contatos.git
+    git clone git@github.com:Enyoo/ContactAPI.git
 3. Navegue até o diretório do projeto:
     cd api-contatos
 4. Crie um arquivo .env baseado no .env.example:
